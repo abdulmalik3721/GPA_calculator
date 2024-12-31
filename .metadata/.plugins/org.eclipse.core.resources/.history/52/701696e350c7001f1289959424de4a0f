@@ -1,0 +1,60 @@
+package GPA.java;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// total points / total credits
+		// points for a class=grade value*credits
+		// A=4, B=3...
+
+		Scanner scanner = new Scanner(System.in);
+
+		Integer credits = 0;
+		boolean validCredits = false;
+		do {
+			System.out.println("Enter number of credits:");
+			String creditsString = scanner.nextLine();
+
+			try {
+				credits = Integer.parseInt(creditsString);
+				validCredits = true;
+			} catch (NumberFormatException nfe) {
+				System.out.println("please enter a valid integer");
+			}
+		} while (validCredits = false);
+
+		System.out.println("Enter number of Grades:");
+		String grades = scanner.nextLine();
+
+		// Integer points=0;
+		Integer gradeValue = 0;
+		if (grades.equalsIgnoreCase("A")) {
+			gradeValue = 4;
+		} else if (grades.endsWith("B")) {
+			gradeValue = 3;
+		} else if (grades.endsWith("C")) {
+			gradeValue = 2;
+		} else if (grades.endsWith("D")) {
+			gradeValue = 1;
+		} else if (grades.endsWith("F")) {
+			gradeValue = 0;
+		} else {
+			System.out.println("You didn't enter valid grade:(");
+		}
+
+		Integer points = gradeValue * credits;
+
+		Integer GPA = points / credits;
+
+		System.out.println("Credits:" + credits);
+		System.out.println("Grades:" + grades);
+		System.out.println("Points:" + points);
+		System.out.println("GPA:" + GPA);
+
+		scanner.close();
+
+	}
+
+}

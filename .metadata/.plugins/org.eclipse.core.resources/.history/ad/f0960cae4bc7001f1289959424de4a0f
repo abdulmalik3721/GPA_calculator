@@ -1,0 +1,47 @@
+package GPA.java;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		//total points / total credits
+		//points for a class=grade value*credits
+		//A=4, B=3...
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		
+		System.out.println("Enter number of credits:");
+		String credits=scanner.nextLine();
+		
+		
+		System.out.println("Enter number of Grades:");
+		String grades=scanner.nextLine();
+		
+		
+		Integer points=0;
+		if(grades.equalsIgnoreCase("A")) {
+			points=Integer.parseInt(grades)*4;
+		}
+		else if (grades.endsWith("B)){
+			points=Integer.parseInt(grades)*3;
+		}
+		
+		
+		
+		
+		
+		
+		
+		System.out.println(credits);
+		System.out.println(grades);
+		
+		
+		scanner.close();
+		
+		
+		
+
+	}
+
+}
